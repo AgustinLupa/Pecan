@@ -1,0 +1,33 @@
+﻿<Window x:Class="Pecan.Views.SearchProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pecan.Views"
+        mc:Ignorable="d"
+        Title="Buscar producto" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Nombre:" VerticalAlignment="Center" />
+            <TextBox Width="300" Margin="20,0,0,0" Height="25" />
+        </StackPanel>
+        <ListView Grid.Row="1" Margin="10" BorderBrush="#CDCDCD" Padding="0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="45" />
+                    <GridViewColumn Header="Cod Barra" Width="75"/>
+                    <GridViewColumn Header="Nombre" Width="175"/>
+                    <GridViewColumn Header="Pre. Uni." Width="75"/>
+                    <GridViewColumn Header="Proveedor" Width="105"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="2" Content="Agregar" Height="25" Width="150"  />
+    </Grid>
+</Window>
