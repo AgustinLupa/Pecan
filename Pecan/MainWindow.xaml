@@ -7,7 +7,7 @@
         xmlns:Menu="clr-namespace:Pecan.Utils"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
-        Title="Pecan" MinHeight="600" MinWidth="850"
+        Title="Pecan" MinHeight="900" MinWidth="950"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -32,7 +32,7 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="228" />
-                    <ColumnDefinition Width="622" />
+                    <ColumnDefinition Width="672" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Sidebar Nav -->
@@ -44,7 +44,7 @@
                     <Border Background="{StaticResource darkOliveBrush}"
                         CornerRadius="20,0,0,20" />
 
-                    <StackPanel Height="400"
+                    <StackPanel Height="600"
                             Width="228"
                             Margin="5,10,0,0"
                             >
