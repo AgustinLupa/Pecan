@@ -6,15 +6,18 @@ using System.Windows.Input;
 
 namespace Pecan.ViewModels;
 
-public class SearchProductViewModel : ViewModelBase
+public class SearchProductVM : ViewModelBase
 {
-    private ObservableCollection<CommodityModel> _commodities;
-    private ObservableCollection<CommodityModel> _productList;
+    private readonly ObservableCollection<CommodityModel> _commodities; //<-- lista de productos
+    // Puede ser que necesite recibir 
+    // o una interfaz con un metodo que sea agregar a la lista de observable
+    // o un ObservableCollection de una clase abstracta/interfaz de la que hereden SaleXCommodityModel y PurchaseXCommodityModel
+    private readonly ObservableCollection<CommodityModel> _productList;
 
     public ICommand FilterCommand { get; set; }
     public ICommand AddProductCommand { get; set; } 
 
-    public SearchProductViewModel(ObservableCollection<CommodityModel> commodities, ObservableCollection<CommodityModel> productList)
+    public SearchProductVM(ObservableCollection<CommodityModel> commodities, ObservableCollection<CommodityModel> productList)
     {
         _commodities = commodities;
         _productList = productList;
