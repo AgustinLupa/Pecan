@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pecan.Interface.Contracts;
+using Pecan.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -23,10 +25,12 @@ namespace Pecan
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IMainManager manager)
         {
             InitializeComponent();
             MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+
+            DataContext = new NavigationVM(manager);
         }
 
         [DllImport("user32.dll")]

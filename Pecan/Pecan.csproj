@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\**" />
-    <EmbeddedResource Remove="Models\**" />
-    <None Remove="Models\**" />
-    <Page Remove="Models\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="fondopecan.jpg" />
     <None Remove="Images\compras.png" />
     <None Remove="Images\productos.png" />
@@ -45,6 +38,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pecan.Entities\Pecan.Entities.csproj" />
+    <ProjectReference Include="..\Pecan.Interface\Pecan.Interface.csproj" />
+    <ProjectReference Include="..\Pecan.TestBackend\Pecan.TestBackend.csproj" />
   </ItemGroup>
 
   <ItemGroup>

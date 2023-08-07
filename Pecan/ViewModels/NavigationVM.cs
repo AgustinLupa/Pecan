@@ -5,11 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Pecan.Interface.Contracts;
 
 namespace Pecan.ViewModels
 {
     public class NavigationVM : ViewModelBase
     {
+        private IMainManager _manager;
+
         private object? _currentView;
         private string? _title;
 
@@ -51,8 +54,10 @@ namespace Pecan.ViewModels
             CurrentView = new SupplierVM();
         }
 
-        public NavigationVM()
+        public NavigationVM(IMainManager manager)
         {
+            _manager = manager;
+
             SalesCommand = new RelayCommand(Sales);
             ProductsCommand = new RelayCommand(Products);
             PurchasesCommand= new RelayCommand(Purchases);

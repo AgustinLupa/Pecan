@@ -24,6 +24,8 @@ namespace Pecan.Views
         {
             InitializeComponent();
             SaleDatePicker.SelectedDate = DateTime.Now;
+
+            
         }
     }
 }

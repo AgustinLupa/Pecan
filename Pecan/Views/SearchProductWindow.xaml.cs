@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Pecan.Entities;
+using Pecan.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +22,10 @@ namespace Pecan.Views
     /// </summary>
     public partial class SearchProductWindow : Window
     {
-        public SearchProductWindow()
+        public SearchProductWindow(ObservableCollection<CommodityModel> commodities, ObservableCollection<CommodityModel> prodlist)
         {
             InitializeComponent();
+            DataContext = new SearchProductVM(commodities, prodlist);
         }
     }
 }
