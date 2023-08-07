@@ -23,7 +23,8 @@
                    Foreground="White"/>
             <DatePicker x:Name="SaleDatePicker" Margin="140,0,0,0" FontSize="24"
                         Background="Transparent" Foreground="{StaticResource darkTomBrush}"
-                        BorderBrush="Transparent" BorderThickness="0,0,0,5">
+                        BorderBrush="Transparent" BorderThickness="0,0,0,5"
+                        SelectedDate="{Binding Date}">
             </DatePicker>
         </StackPanel>
         

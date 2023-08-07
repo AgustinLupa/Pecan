@@ -16,7 +16,7 @@
 
         <StackPanel Orientation="Horizontal" Margin="10">
             <TextBlock Text="Nombre:" VerticalAlignment="Center" />
-            <TextBox Width="300" Margin="20,0,0,0" Height="25" />
+            <TextBox Width="300" Margin="20,0,0,0" Height="25" Text="{Binding Name}"/>
         </StackPanel>
         
         <ListView Grid.Row="1" Margin="10" BorderBrush="#CDCDCD" Padding="0" >
@@ -31,9 +31,9 @@
         
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
             <TextBlock Text="Cantidad:" VerticalAlignment="Center" />
-            <TextBox Width="100" Height="25" Margin="15,0,0,0" />
+            <TextBox Width="100" Height="25" Margin="15,0,0,0" Text="{Binding Amount}" />
             <TextBlock Text="Subtotal:" VerticalAlignment="Center" Margin="15,0,0,0" />
-            <TextBox Width="100" Height="25" Margin="15,0,0,0" />
+            <TextBox Width="100" Height="25" Margin="15,0,0,0" Text="{Binding Subtotal}" />
         </StackPanel>
         
         <Button Grid.Row="3" Content="Agregar" Height="25" Width="150"  />

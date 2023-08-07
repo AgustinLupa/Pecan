@@ -23,7 +23,8 @@
             <DatePicker x:Name="PurchaseDatePicker"  Margin="140,0,0,0"
                         FontSize="24" Background="Transparent"
                         Foreground="{StaticResource darkTomBrush}"
-                        BorderBrush="Transparent" BorderThickness="0,0,0,5">
+                        BorderBrush="Transparent" BorderThickness="0,0,0,5"
+                        SelectedDate="{Binding Date}">
             </DatePicker>
         </StackPanel>
         
@@ -35,7 +36,7 @@
                    FontSize="24" FontWeight="Medium" Foreground="White"
                    CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,3"
                    Width="288" Background="{StaticResource darkTomBrush}"
-                   Margin="25,0,0,20" />
+                   Margin="25,0,0,20" Text="{Binding SupplierName}"/>
         </StackPanel>
         
         <!-- Search product

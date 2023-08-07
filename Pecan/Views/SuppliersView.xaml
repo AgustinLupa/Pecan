@@ -12,18 +12,21 @@
         <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
             <TextBlock Text="Nombre Proveedor" />
             <TextBox Margin="28,0,0,0" Width="300" CaretBrush="LightGray" 
-                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"/>
+                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"
+                     Text="{Binding SupplierName}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
             <TextBlock Text="Telefono" />
             <TextBox Margin="142,0,0,0" Width="300" CaretBrush="LightGray" 
-                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"/>
+                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"
+                     Text="{Binding TelephoneNumber}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
 
             <TextBlock Text="Domicilio" />
             <TextBox Margin="131,0,0,0" Width="300" CaretBrush="LightGray" 
-                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"/>
+                     BorderBrush="DarkGray" BorderThickness="0,0,0,3" Background="{StaticResource darkTomBrush}"
+                     Text="{Binding Address}"/>
         </StackPanel>
         <Button HorizontalAlignment="Center" Width="200" Height="40" Margin="0,15,0,0"
                 Foreground="White" 
