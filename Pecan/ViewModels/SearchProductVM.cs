@@ -8,6 +8,16 @@ namespace Pecan.ViewModels;
 
 public class SearchProductVM : ViewModelBase
 {
+    //Properties
+    private string _name;
+    public string Name { get { return _name; } set { _name = value; OnPropertyChanged(); } }
+
+    private float _amount;
+    public float Amount { get { return _amount; } set { _amount = value; OnPropertyChanged(); } }
+
+    private float _subtotal;
+    public float Subtotal { get { return _subtotal; } set { _subtotal = value; OnPropertyChanged(); } }
+
     private readonly ObservableCollection<CommodityModel> _commodities; //<-- lista de productos
     // Puede ser que necesite recibir 
     // o una interfaz con un metodo que sea agregar a la lista de observable
