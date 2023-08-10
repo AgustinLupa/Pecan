@@ -5,95 +5,118 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Pecan.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="490" d:DesignWidth="572"
+             d:DesignHeight="790" d:DesignWidth="872"
              Background="{StaticResource darkOliveBrush}">
-    <StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    Margin="30,25,10,0">
-            <TextBlock Text="Fecha"
-                   FontFamily="Montserrat"
-                   FontSize="24"
-                   FontWeight="Medium"
+
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Date picker -->
+        <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
+            <TextBlock Text="Fecha" FontFamily="Montserrat" FontSize="24" FontWeight="Medium"
                    Foreground="White"/>
-            <DatePicker x:Name="SaleDatePicker"
-                               Margin="140,0,0,0"
-                               FontSize="24"
-                        Background="Transparent"
-                        Foreground="{StaticResource darkTomBrush}"
-                        BorderBrush="Transparent"
-                        BorderThickness="0,0,0,5">
+            <DatePicker x:Name="SaleDatePicker" Margin="140,0,0,0" FontSize="24"
+                        Background="Transparent" Foreground="{StaticResource darkTomBrush}"
+                        BorderBrush="Transparent" BorderThickness="0,0,0,5"
+                        SelectedDate="{Binding Date}">
             </DatePicker>
         </StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    Margin="30,25,10,0">
-            <TextBlock Text="Buscar producto"
-                       FontFamily="Montserrat"
-                       FontSize="24"
-                       FontWeight="Medium"
-                       Foreground="White"/>
-            <TextBox x:Name="txtProducto"
-                   FontFamily="Montserrat"
-                   FontSize="24"
-                   FontWeight="Medium"
-                   Foreground="White"
-                   CaretBrush="LightGray"
-                   BorderBrush="DarkGray"
-                   BorderThickness="0,0,0,3"
-                   Width="300"
-                   Background="{StaticResource darkTomBrush}"
-                   Margin="25,0,0,0"
-                   />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal"
-                    Margin="30,25,10,0">
-            <TextBlock Text="Cantidad"
-                       FontFamily="Montserrat"
-                       FontSize="24"
-                       FontWeight="Medium"
-                       Foreground="White"
-                       />
-            <TextBox x:Name="txtCantidad"
-                   FontFamily="Montserrat"
-                   FontSize="24"
-                   FontWeight="Medium"
-                   Foreground="White"
-                   CaretBrush="LightGray"
-                   BorderBrush="DarkGray"
-                   BorderThickness="0,0,0,3"
-                   Width="140"
-                   Background="{StaticResource darkTomBrush}"
-                   Margin="20,0,0,0"
-                   />
-            <TextBlock Text="Subtotal"
-                       FontFamily="Montserrat"
-                       FontSize="24"
-                       FontWeight="Medium"
-                       Foreground="White"
-                       Margin="15,0,0,0"
-                       />
-            <TextBox x:Name="txtSubtotal"
-                   FontFamily="Montserrat"
-                   FontSize="24"
-                   FontWeight="Medium"
-                   Foreground="White"
-                   CaretBrush="LightGray"
-                   BorderBrush="DarkGray"
-                   BorderThickness="0,0,0,3"
-                   Width="140"
-                   Background="{StaticResource darkTomBrush}"
-                   Margin="20,0,0,0"
-                   />
-        </StackPanel>
-        <Button HorizontalAlignment="Center"
-                Width="200"
-                Height="40"
-                Margin="0,15,0,0"
-                FontSize="24"
-                FontWeight="Medium"
-                Foreground="White" 
-                Background="{StaticResource tomBrush}"
-                Content="Agregar"
-                />
+        
+        <!-- Search product -->
+        <!--
+        <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
+            <TextBlock Text="Buscar producto" FontFamily="Montserrat" FontSize="24"
+                       FontWeight="Medium" Foreground="White"/>
+            <TextBox x:Name="txtProducto" FontFamily="Montserrat" FontSize="24"
+                   FontWeight="Medium" Foreground="White" CaretBrush="LightGray"
+                   BorderBrush="DarkGray" BorderThickness="0,0,0,3" Width="300"
+                   Background="{StaticResource darkTomBrush}" Margin="25,0,0,0" />
+        </StackPanel> -->
+        
+        <!-- Product amount and subtotal 
+        <StackPanel Orientation="Horizontal" Margin="30,25,10,0">
+            <TextBlock Text="Cantidad" FontFamily="Montserrat" FontSize="24"
+                       FontWeight="Medium" Foreground="White"/>
+            <TextBox x:Name="txtCantidad" FontFamily="Montserrat" FontSize="24"
+                   FontWeight="Medium" Foreground="White" CaretBrush="LightGray"
+                   BorderBrush="DarkGray" BorderThickness="0,0,0,3" Width="140"
+                   Background="{StaticResource darkTomBrush}" Margin="20,0,0,0" />
+            <TextBlock Text="Subtotal" FontFamily="Montserrat" FontSize="24" FontWeight="Medium"
+                       Foreground="White" Margin="15,0,0,0" />
+            <TextBox x:Name="txtSubtotal" FontFamily="Montserrat" FontSize="24" FontWeight="Medium"
+                   Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray"
+                   BorderThickness="0,0,0,3" Width="140" Background="{StaticResource darkTomBrush}"
+                   Margin="20,0,0,0" />
+        </StackPanel> -->
+        
+        <!-- Add button -->
+        <Button Grid.Row="1" HorizontalAlignment="Left" Width="250" Height="40" Margin="30,25,0,10"
+                FontSize="24"  FontWeight="Medium"  Foreground="White" 
+                Background="{StaticResource tomBrush}"  Content="Agregar producto" Command="{Binding}"/>
+        
+        <!-- Product List -->
+        <ListView Grid.Row="2" Margin="5,5,5,5" FontSize="20" ItemsSource="{Binding SaleItems}">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </Style>                        
+                    </GridView.ColumnHeaderContainerStyle>
+                    
+                    <GridViewColumn Header="Cod" Width="270" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Barcode}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>    
+                    </GridViewColumn>
 
-    </StackPanel>
+                    <GridViewColumn Header="Nombre" Width="292" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Product}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Cant" Width="100" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding QuantityOfProducts}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Precio" Width="100" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Price}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Subtot" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Subtotal}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Add button -->
+        <Button Grid.Row="3" HorizontalAlignment="Center" Width="250" Height="60" Margin="0,15,0,10"
+                FontSize="24"  FontWeight="Medium"  Foreground="White" 
+                Background="{StaticResource tomBrush}"  Content="Confirmar Venta" Command="{Binding}" />
+
+    </Grid>
 </UserControl>

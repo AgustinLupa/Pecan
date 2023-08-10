@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pecan.TestBackend.Managers;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace Pecan
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            MainWindow wne = new MainWindow(new TestMainManager());
+            wne.Show();
+        }
     }
 }
