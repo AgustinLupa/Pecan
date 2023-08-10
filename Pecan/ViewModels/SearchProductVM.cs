@@ -9,7 +9,7 @@ namespace Pecan.ViewModels;
 public class SearchProductVM : ViewModelBase
 {
     //Properties
-    private string _name;
+    private string _name = string.Empty;
     public string Name { get { return _name; } set { _name = value; OnPropertyChanged(); } }
 
     private float _amount;
