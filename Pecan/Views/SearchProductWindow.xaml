@@ -1,0 +1,41 @@
+﻿<Window x:Class="Pecan.Views.SearchProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pecan.Views"
+        mc:Ignorable="d"
+        Title="Buscar producto" Height="550" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Nombre:" VerticalAlignment="Center" />
+            <TextBox Width="300" Margin="20,0,0,0" Height="25" Text="{Binding Name}"/>
+        </StackPanel>
+        
+        <ListView Grid.Row="1" Margin="10" BorderBrush="#CDCDCD" Padding="0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Codigo" Width="125"/>
+                    <GridViewColumn Header="Nombre" Width="225"/>
+                    <GridViewColumn Header="Pre. Uni." Width="125"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Cantidad:" VerticalAlignment="Center" />
+            <TextBox Width="100" Height="25" Margin="15,0,0,0" Text="{Binding Amount}" />
+            <TextBlock Text="Subtotal:" VerticalAlignment="Center" Margin="15,0,0,0" />
+            <TextBox Width="100" Height="25" Margin="15,0,0,0" Text="{Binding Subtotal}" />
+        </StackPanel>
+        
+        <Button Grid.Row="3" Content="Agregar" Height="25" Width="150"  />
+    </Grid>
+</Window>
