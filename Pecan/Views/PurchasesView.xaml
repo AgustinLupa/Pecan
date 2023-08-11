@@ -69,10 +69,10 @@
         <!--Add Button-->
         <Button Grid.Row="2" HorizontalAlignment="Left" Width="250" Height="40"
                 Margin="25,15,0,0" FontSize="24" FontWeight="Medium" Foreground="White" 
-                Background="{StaticResource tomBrush}" Content="Agregar producto"      />
+                Background="{StaticResource tomBrush}" Content="Agregar producto" Command="{Binding AddProductCommand}"     />
 
         <!-- Product List -->
-        <ListView Grid.Row="3" Margin="5,5,5,5" FontSize="20">
+        <ListView Grid.Row="3" Margin="5,5,5,5" FontSize="20" ItemsSource="{Binding PurchaseItems}">
             <ListView.View>
                 <GridView>
                     <GridView.ColumnHeaderContainerStyle>
@@ -80,11 +80,46 @@
                             <Setter Property="IsEnabled" Value="False" />
                         </Style>
                     </GridView.ColumnHeaderContainerStyle>
-                    <GridViewColumn Header="Cod" Width="270" />
-                    <GridViewColumn Header="Nombre" Width="292" />
-                    <GridViewColumn Header="Cant" Width="100" />
-                    <GridViewColumn Header="Precio" Width="100" />
-                    <GridViewColumn Header="Subtot" />
+
+                    <GridViewColumn Header="Cod" Width="270" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Barcode}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Nombre" Width="292" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Product}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Cant" Width="100" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding QuantityOfProducts}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Precio" Width="100" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Price}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Subtot" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Subtotal}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -92,7 +127,7 @@
         <!-- Confirm Button -->
         <Button Grid.Row="4" HorizontalAlignment="Center" Width="250" Height="60"
                 Margin="0,15,0,10" FontSize="24" FontWeight="Medium" Foreground="White" 
-                Background="{StaticResource tomBrush}" Content="Confirmar Compra"      />
+                Background="{StaticResource tomBrush}" Content="Confirmar Compra"  Command="{Binding ConfirmPurchaseCommand}"    />
 
     </Grid>
 </UserControl>
