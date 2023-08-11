@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Pecan.Data.DataModel
 {
-    public class Supplier : ICrd<SupplierModel>, IModify<SupplierModel>
+    public class SupplierData : ICrd<SupplierModel>, IModify<SupplierModel>
     {
         public string Add(SupplierModel supplier)
         {
@@ -59,7 +59,7 @@ namespace Pecan.Data.DataModel
             {
                 using (var db = new MySqlConnection(PecanContext.ConnectionString()))
                 {
-                    var mySql = "SELECT Id,SupplierName,Tel,Direction FROM Suppliers";
+                    var mySql = "SELECT Id,SupplierName,Tel,Adress FROM Suppliers";
                     var result = db.Query<SupplierModel>(mySql);
                     return result.ToList();
                 }
@@ -77,7 +77,7 @@ namespace Pecan.Data.DataModel
             {
                 using (var db = new MySqlConnection(PecanContext.ConnectionString()))
                 {
-                    var mySql = $"SELECT Id,SupplierName,Tel,Direction FROM Suppliers WHERE Id = {id}";
+                    var mySql = $"SELECT Id,SupplierName,Tel,Adress FROM Suppliers WHERE Id = {id}";
                     var result = db.QueryFirstOrDefault<SupplierModel>(mySql);
                     if (result != null)
                         return result;
